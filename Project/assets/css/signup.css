@@ -22,26 +22,26 @@ body {
 }
 
 .registration-wrapper {
-    margin: 50px auto;
+    margin: 50px auto 0;
     width: 270px;
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
 }
 
 .registration-wrapper .hero {
     margin-top: 65px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     text-align: center;
 }
 
 .registration-wrapper .logo img {
-    margin: 0 auto 25px;
+    margin: 0 auto 15px;
     height: 90px;
 }
 
 .registration-wrapper .hero h4 {
     color: #fff;
-    font-size: 1.2em;
-    line-height: 1.5em;
+    font-size: 19px;
+    line-height: 26px;
 }
 
 .btn-container .btn {
@@ -50,13 +50,11 @@ body {
     color: #000;
     font-weight: 400;
     box-sizing: border-box;
-    line-height: 1.7em;
-    font-size: 0.9em;
-    padding: 10px 15px;
+    line-height: 27px;
+    font-size: 14px;
     text-align: center;
     border-radius: 25px;
     width: 100%;
-    margin-bottom: 16px;
     position: relative;
     color: #999;
 }
@@ -71,7 +69,9 @@ body {
     color: #fff;
     border-color: #fff;
     font-weight: 700;
-    font-size: 1.1em;
+    font-size: 17px;
+    margin-bottom: 16px;
+    padding: 10px 15px;
 }
 
 .btn-container .btn.fill {
@@ -106,7 +106,8 @@ body {
     }
     .signup-info p {
         margin-bottom: 20px;
-        line-height: 1.6em;
+        line-height: 25px;
+        font-size: 16px;
         color: dimgrey;
     }
     .btn-container {
@@ -117,7 +118,7 @@ body {
     }
     .btn-container .btn {
         border: none;
-        font-size: 1.5em;
+        font-size: 25px;
         color: dimgrey;
     }
     .btn-container .btn:hover {
