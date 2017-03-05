@@ -8,11 +8,12 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/top-menu.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="assets/js/switchViews.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <header id="top-menu-nav">
+    <header id="fixed-menu" class="top-menu-nav">
         <div class="nav-wrapper">
             <nav class="nav-menu">
                 <ul class="primary">
@@ -60,10 +61,89 @@
                 </div>
             </div>
             <div class="menu-box">
-                <a href=""><i id="menu-icon" class="fa fa-bars fa-2x"></i></a>
+                <a id="open-menu" onclick="showMobileMenu()"><i id="menu-icon" class="fa fa-bars fa-2x"></i></a>
             </div>
         </div>
     </header>
+    <section id="mobile-menu">
+        <div class="menu">
+            <header class="top-menu-nav">
+                <div class="nav-wrapper">
+                    <nav class="nav-menu">
+                        <ul class="primary">
+                            <li>
+                                <a class="logo" href="index.html"><img src="assets/images/logo-white.png" alt="SinS"></a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="menu-box">
+                        <a id="btn-close"><i id="close-icon" class="fa fa-times" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </header>
+            <section id="mobile-links">
+                <div class="sign-up primary">
+                    <a id="btn-signup-mobile" onclick="showSignUpMenu()"><i class="fa fa-user-circle" aria-hidden="true"></i>Sign in</a>
+                </div>
+                <nav class="nav-menu-mobile">
+                    <div class="line-divider"></div>
+                    <ul class="primary">
+                        <li class="active">
+                            <a href="">Popular</a>
+                        </li>
+                        <li>
+                            <a href="">Recent</a>
+                        </li>
+                        <li>
+                            <a href="">Today's</a>
+                        </li>
+                    </ul>
+                    <div class="line-divider"></div>
+                    <ul class="secondary">
+                        <li>
+                            <a href="">Videos</a>
+                        </li>
+                        <li>
+                            <a href="">Quotes</a>
+                        </li>
+                        <li>
+                            <a href="">Gifs</a>
+                        </li>
+                        <li>
+                            <a href="">NSFW</a>
+                        </li>
+                        <li>
+                            <a href="">Art</a>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+            <section id="registration">
+                <div class="registration-wrapper">
+                    <div class="signup-info">
+                        <h2>Howdy partner!</h2>
+                        <p>SinS is the best source of daily scenes captured by you from your hometown, country or all over the world. Share anything you find interesting or strange, and see what other people think about it. Fulfill your day with laughter
+                            and discover what brings a smile on your face.</p>
+                    </div>
+                    <div class="hero">
+                        <div class="logo">
+                            <img src="assets/images/logo-white.png" alt="SinS - logo">
+                        </div>
+                        <h4>Sign in to SinS to share &amp; discuss funny thing you saw around Bulgaria and the world.</h4>
+                    </div>
+                    <div class="btn-container">
+                        <a id="btn-email" class="btn white fill" href=""><i class="fa fa-envelope-o" aria-hidden="true"></i>Sign up with an E-mail</a>
+                        <div class="social-signup">
+                            <a id="btn-facebook" class="btn white" href="#" onClick="return false;"><i class="fa fa-facebook" aria-hidden="true"></i><span>Continue with </span>Facebook</a>
+                            <a id="btn-google-plus" class="btn white fill" href="#" onClick="return false;"><i class="fa fa-google-plus" aria-hidden="true"></i><span>Continue with </span>Google</a>
+                        </div>
+                        <a class="btn" href="#" onClick="return false;">Login with Username or E-mail</a>
+                    </div>
+                    <div></div>
+                </div>
+            </section>
+        </div>
+    </section>
 </body>
 
 </html>

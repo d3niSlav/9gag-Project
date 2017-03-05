@@ -8,23 +8,34 @@
     <link rel="icon" href="assets/images/logo-icon.png">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/top-menu.css">
-    <link rel="stylesheet" href="assets/css/signup.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color: black;
+        }
+        
+        .nav-menu .primary a {
+            border: none;
+        }
+        
+        @media only screen and (min-width: 768px) {
+            body {
+                background-color: white;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <header id="top-menu-nav">
+    <header class="top-menu-nav">
         <div class="nav-wrapper">
             <nav class="nav-menu">
                 <ul class="primary">
                     <li>
-                        <a class="logo" href="index.html"><img src="assets/images/logo-white.png" alt="SinS"></a>
+                        <a class="logo" href="./index.html"><img src="assets/images/logo-white.png" alt="SinS"></a>
                     </li>
                 </ul>
             </nav>
-        </div>
-        <div class="menu-close">
-            <a href="./index.html"><i id="close-icon" class="fa fa-times" aria-hidden="true"></i></a>
         </div>
     </header>
     <section class="registration">
