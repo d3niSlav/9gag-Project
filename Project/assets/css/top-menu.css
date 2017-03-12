@@ -1,4 +1,5 @@
 header.top-menu-nav {
+    z-index: 1000;
     background-color: #000;
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
@@ -204,7 +205,9 @@ header.top-menu-nav a.logo img {
 
 #mobile-menu,
 #registration {
+    z-index: 1001;
     display: none;
+    background-color: black;
 }
 
 
@@ -458,4 +461,348 @@ a#btn-close {
     .social-signup a.btn.fill#btn-google-plus:hover {
         background-color: #c54523;
     }
+}
+
+
+/*
+* @section Posts page
+*/
+
+
+/*
+* @subsection Main posts
+*/
+
+#posts-container {
+    margin-top: 50px;
+}
+
+section#posts-list article {
+    border-top: 1px solid #eee;
+    border-bottom: 16px solid #f5f5f5;
+}
+
+@media only screen and (min-width: 768px) {
+    section#posts-list article:first-child {
+        border: 0;
+        padding: 0;
+    }
+}
+
+
+/*
+* @subsection Post Title
+*/
+
+article.post {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+article.post header {
+    padding: 16px;
+}
+
+article.post h2 {
+    font-size: 1.3em;
+    line-height: 1.3em;
+    font-weight: 700;
+}
+
+article.post header a {
+    color: #000;
+}
+
+article.post header a:hover {
+    color: #09f;
+}
+
+
+/*
+* @subsection Post Media Content
+*/
+
+article .media-container {
+    position: relative;
+    background-color: #f5f5f5;
+    margin-bottom: 12px;
+}
+
+article .media-container a {
+    display: block;
+    overflow: hidden;
+}
+
+article .media-container a img {
+    display: block;
+    width: 100%;
+    border: none;
+}
+
+#sidebar {
+    display: none;
+}
+
+
+/*
+* @subsection Post Statistics
+*/
+
+article .post-statistics p {
+    color: #999;
+    margin: 10px 0;
+}
+
+article .post-statistics p a {
+    color: #999;
+}
+
+article .post-statistics p a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+
+/*
+* @subsection Post Actions
+*/
+
+article .post-actions:after,
+article .post-actions:before {
+    display: table;
+    content: "";
+}
+
+article .post-actions:after {
+    clear: both;
+}
+
+.post-actions .vote,
+.post-actions .vote .btn-vote {
+    float: left;
+    overflow: hidden;
+}
+
+.post-actions .more {
+    display: none;
+}
+
+.post-actions .vote .btn-vote li {
+    display: block;
+    float: left;
+    text-align: center;
+}
+
+.post-actions .vote .btn-vote li a,
+.post-actions .more a {
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 25px;
+    box-sizing: border-box;
+    line-height: 30px;
+}
+
+.post-actions .vote .btn-vote li a:hover,
+.post-actions .more:hover {
+    border-color: #999;
+    color: black;
+}
+
+.post-actions .share {
+    float: right
+}
+
+.post-actions .share ul {
+    overflow: hidden;
+    list-style-type: none;
+}
+
+.post-actions .share ul li {
+    float: left;
+    margin: 0 0 0 10px;
+}
+
+.post-actions .share .btn-share {
+    display: block;
+    color: #fff;
+    font-weight: 700;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px 0 15px;
+    border-radius: 2px;
+    text-align: center;
+    position: relative;
+    font-size: 17px;
+}
+
+.post-actions .share .btn-share i {
+    margin-top: 5px;
+    padding: 5px 5px 0 0;
+    font-size: 20px;
+}
+
+.post-actions .share .btn-share.facebook {
+    background-color: #3b5998;
+}
+
+.post-actions .share .btn-share.facebook:hover {
+    background-color: #4c70ba;
+}
+
+.post-actions .share .btn-share.twitter {
+    background: #00aced;
+}
+
+.post-actions .share .btn-share.twitter:hover {
+    background-color: #21c2ff;
+}
+
+@media only screen and (max-width: 768px) {
+    article .post-statistics {
+        margin: 0 16px;
+        border-bottom: 1px solid #eee;
+    }
+    .post-actions,
+    .post-actions .vote .btn-vote {
+        width: 100%;
+    }
+    .post-actions .vote {
+        width: 75%;
+    }
+    .post-actions .vote .btn-vote li {
+        width: 33.3%;
+    }
+    .post-actions .more {
+        width: 25%;
+        display: block;
+        float: left;
+        overflow: hidden;
+        text-align: center;
+    }
+    .post-actions .vote .btn-vote li a,
+    .post-actions .more a {
+        padding: 10px 15px;
+    }
+    .post-actions .share {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    section#posts-list article {
+        margin-bottom: 30px;
+        padding: 20px 0 0;
+        border-bottom: none;
+    }
+    .page {
+        width: 500px;
+        margin: 0 auto 40px;
+    }
+    article.post {
+        width: 500px;
+    }
+    article.post header {
+        padding: 16px 0;
+    }
+    article.post header a {
+        font-size: 25px;
+    }
+    article.post h2 {
+        word-wrap: break-word;
+    }
+    article .media-container {
+        width: 500px;
+    }
+    article .media-container a img {
+        width: 500px;
+        border: 0;
+    }
+    article .post-actions {
+        width: 500px;
+        margin: 10px 0;
+        padding-bottom: 0;
+        position: relative;
+    }
+    .post-actions .vote .btn-vote li {
+        margin: 0 10px 0 0;
+    }
+    .post-actions .vote .btn-vote li a {
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 2px;
+        display: block;
+        position: relative;
+        padding: 4px 12px;
+        color: #999;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .page {
+        width: 940px;
+    }
+    .main-posts {
+        float: left;
+        width: 600px;
+    }
+}
+
+
+/*
+* @subsection Sidebar
+*/
+
+@media only screen and (min-width: 1024px) {
+    #sidebar {
+        display: block;
+        float: right;
+        padding: 0 0 0 40px;
+        width: 300px;
+        position: relative;
+    }
+}
+
+#sidebar .sidebar-content {
+    margin-top: 20px;
+}
+
+#sidebar .sidebar-content li {
+    margin-bottom: 16px;
+}
+
+#sidebar .sidebar-content .img-container {
+    display: block;
+    overflow: hidden;
+    width: 300px;
+    height: 105px;
+    margin-bottom: 4px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+}
+
+#sidebar .sidebar-content .img-container a {
+    display: block;
+}
+
+#sidebar .sidebar-content .img-container img {
+    display: block;
+    border: 0;
+    width: 100%;
+    margin-top: -40px;
+}
+
+#sidebar .sidebar-content .info-container h3 {
+    font-size: 15px;
+    word-wrap: break-word;
+}
+
+#sidebar .sidebar-content .info-container a {
+    display: block;
+    font-weight: bold;
+    color: #000;
+}
+
+#sidebar .sidebar-content li:hover .info-container a {
+    color: #09f;
 }
