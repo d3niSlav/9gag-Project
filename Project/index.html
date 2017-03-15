@@ -6,6 +6,7 @@
     <title>SinS - For A Funny Day</title>
     <link rel="icon" href="assets/images/logo-icon.png">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/menu-more.css">
     <link rel="stylesheet" href="assets/css/top-menu.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <script src="assets/js/switchViews.js"></script>
@@ -31,7 +32,16 @@
                         <a href="">Today's</a>
                     </li>
                     <li>
-                        <a href="">More<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                        <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">More</button>
+            <div id="myDropdown" class="dropdown-content">
+                    <a id="ddrop-menu-color" href="#">SinS GIF</a>
+                    <a id="ddrop-menu-color" href="#">WTF</a>
+                    <a id="ddrop-menu-color" href="#">Funny</a>
+                    <a id="ddrop-menu-color" href="#">
+                </div>
+                        </div>
+                       
                     </li>
                 </ul>
                 <ul class="secondary">
@@ -161,6 +171,7 @@
         </div>
     </section>
     <script src="assets/js/controller.js"></script>
+
 </body>
 
 </html>
