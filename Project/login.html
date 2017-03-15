@@ -16,13 +16,42 @@
         </header>
     <div id="log">
     
-        <form>
+        <form name="input" action="index.html" onsubmit="return login();">
             <h2> Sign In</h2>
             <input type="text" id="username" placeholder="Enter Username"/>
             <input type="password" id="password" placeholder="Enter Password"/>
-            <input  type="submit" id="log-button" value="Sign up" />
-
+            <input  type="submit" id="log-button" value="Sign in" />
         </form>
     </div>
+
+    <script>
+        function login(){
+                var username = document.getElementById("username");
+                var pass = document.getElementById("password");
+
+                // var loggedResult = userManager.loginUser(username.value, pass.value);
+                
+                var userJSON = localStorage.getItem(username.value);
+
+                var ok = false;
+                if(userJSON){
+                    var user = JSON.parse(userJSON);
+                    if(user.password === pass.value){
+                        alert("Login Success");
+                        ok = true; 
+                    } else {
+                        alert("Incorrect password");
+                        ok = false; 
+                    }
+                } else {
+                   alert("User not found")
+                   ok = false; 
+                }
+
+                return ok;
+        }
+        
+    </script>
+    <script type="text/javascript" src="assets\js\authService.js"></script>
 </body>
 </html>

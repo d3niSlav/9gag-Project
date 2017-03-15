@@ -35,6 +35,7 @@
 
         </form>
         <script>
+
             function myFunction() {
                 var pass = document.getElementById("password1");
                 var confirmPass = document.getElementById("password2");
@@ -78,6 +79,17 @@
 
                     ok = false;
                 }
+
+                if(ok){
+                    var user = new User(username.value, email.value, pass.value);
+                    // userManager.registerUser(user);
+
+                    localStorage.setItem(username.value, JSON.stringify(user));
+
+                    // var _user = localStorage.getItem(username.value);
+
+                    alert("Success sign up")
+                }
                 
                 return ok;
             }
@@ -102,6 +114,8 @@
                     return false;
             }
         </script>
+
+        <script type="text/javascript" src="assets\js\authService.js"></script>
 
 </body>
 
