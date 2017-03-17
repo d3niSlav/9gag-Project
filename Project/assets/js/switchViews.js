@@ -1,3 +1,4 @@
+// Switch between Mobile menu and Desktop menu
 function showMobileMenu() {
     document.body.style.backgroundColor = "black";
     document.getElementsByClassName("top-menu-nav")[0].style.display = "none";
@@ -16,4 +17,21 @@ function hideMobileMenu() {
 function showSignUpMenu() {
     document.getElementById("mobile-links").style.display = "none";
     document.getElementById("registration").style.display = "block";
+}
+
+// Dropdown menu switch
+function showDropdownMenu() {
+    document.getElementById("dropdownMenu").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+    if (!event.target.matches('.drop-btn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var index = 0; index < dropdowns.length; index++) {
+            var openDropdown = dropdowns[index];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
 }

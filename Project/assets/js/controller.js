@@ -1,8 +1,3 @@
-
-
-
-
-
 function createNewPost(post) {
     var newPost = document.createElement("article");
     newPost.className = "post";
@@ -200,29 +195,5 @@ for (var index = 0; index < postsData.length; index++) {
     createHighlinedPost(posts[index]);
 }
 
-
-
 /* Create some comments */
 var comments = [];
-
-console.log(users);
-console.log(posts);
-
-
-    function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
