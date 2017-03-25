@@ -1,10 +1,14 @@
+/*
 var postId;
+
+// If using query parameter
 
 (function() {
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
         postId = value;
     });
 })();
+
 
 function getPost(postId) {
     return JSON.parse(window.localStorage.getItem("posts")).find(function(post) {
@@ -13,6 +17,9 @@ function getPost(postId) {
 }
 
 var currPost = getPost(postId);
+*/
+
+var currPost = JSON.parse(window.sessionStorage.getItem("currentPost"));
 
 document.getElementById("post-title-text").innerHTML = currPost.title;
 document.getElementById("post-points-text").innerHTML = currPost.points;

@@ -6,7 +6,10 @@ function createNewPost(post) {
     var postHeader = document.createElement("header");
     var headerContainer = document.createElement("h2");
     var postTitle = document.createElement("a");
-    postTitle.href = "./sins.html?postId=" + post.postId;
+    postTitle.href = "./sins.html";
+    postTitle.addEventListener('click', function() {
+        window.sessionStorage.setItem("currentPost", JSON.stringify(post));
+    }, false);
     postTitle.appendChild(document.createTextNode(post.title));
     headerContainer.appendChild(postTitle);
     postHeader.appendChild(headerContainer);
@@ -17,7 +20,10 @@ function createNewPost(post) {
     var mediaContainer = document.createElement("div");
     mediaContainer.className = "media-container";
     var mediaAnchor = document.createElement("a");
-    mediaAnchor.href = "./sins.html?postId=" + post.postId;
+    mediaAnchor.href = "./sins.html";
+    mediaAnchor.addEventListener('click', function() {
+        window.sessionStorage.setItem("currentPost", JSON.stringify(post));
+    }, false);
     var mediaImage = document.createElement("img");
     mediaImage.src = post.source;
     mediaImage.alt = post.title;
@@ -31,7 +37,10 @@ function createNewPost(post) {
     var statisticsParagraph = document.createElement("p");
 
     var pointsAnchor = document.createElement("a");
-    pointsAnchor.href = "./sins.html?postId=" + post.postId;
+    pointsAnchor.href = "./sins.html";
+    pointsAnchor.addEventListener('click', function() {
+        window.sessionStorage.setItem("currentPost", JSON.stringify(post));
+    }, false);
     pointsAnchor.className = ("post-points");
     var pointsCount = document.createElement("span");
     pointsCount.className = "post-points-count";
