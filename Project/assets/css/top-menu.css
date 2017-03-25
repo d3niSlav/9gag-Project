@@ -644,12 +644,18 @@ article .post-actions:after {
     font-size: 25px;
     box-sizing: border-box;
     line-height: 30px;
+    cursor: pointer;
 }
 
 .post-actions .vote .btn-vote li a:hover,
 .post-actions .more:hover {
     border-color: #999;
     color: black;
+}
+
+.post-actions .vote .btn-vote li a.clicked {
+    border-color: dodgerblue;
+    color: dodgerblue;
 }
 
 .post-actions .share {

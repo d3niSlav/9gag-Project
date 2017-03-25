@@ -15,13 +15,14 @@ function Profile(id, firstName, lastName, birthday, eMail) {
     this.comments = [];
 }
 
-function Post(userId, title, source) {
+function Post(postId, userId, title, source, points, comments, publishDate) {
+    this.postId = postId;
     this.userId = userId;
     this.title = title;
     this.source = source;
-    this.points = 0;
-    this.comments = [];
-    this.publishDate = new Date();
+    this.points = points || 0;
+    this.comments = comments || [];
+    this.publishDate = publishDate || new Date();
 }
 
 function Comment(userId, postId, message) {
