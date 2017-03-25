@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SinS - For A Funny Day</title>
+    <link rel="icon" href="assets/images/logo-icon.png">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/top-menu.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="assets/js/switchViews.js"></script>
+    <script src="assets/js/model.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header id="fixed-menu" class="top-menu-nav">
+        <div class="nav-wrapper">
+            <nav class="nav-menu">
+                <ul class="primary">
+                    <li>
+                        <a class="logo" href="index.html"><img src="assets/images/logo-white.png" alt="SinS"></a>
+                    </li>
+                    <li>
+                        <a href="">Popular</a>
+                    </li>
+                    <li>
+                        <a href="">Recent</a>
+                    </li>
+                    <li>
+                        <a href="">Today's</a>
+                    </li>
+                    <li>
+                        <a onclick="showDropdownMenu()" class="drop-btn">More<i class="fa fa-chevron-down drop-btn" aria-hidden="true"></i></a>
+                        <div id="dropdownMenu" class="dropdown-content">
+                            <a id="ddrop-menu-color" href="#">SinS GIF</a>
+                            <a id="ddrop-menu-color" href="#">WTF</a>
+                            <a id="ddrop-menu-color" href="#">Funny</a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="secondary">
+                    <li>
+                        <a href="">Videos</a>
+                    </li>
+                    <li>
+                        <a href="">Quotes</a>
+                    </li>
+                    <li>
+                        <a href="">Gifs</a>
+                    </li>
+                    <li>
+                        <a href="">NSFW</a>
+                    </li>
+                    <li>
+                        <a href="">Art</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="side-menu">
+                <div class="search">
+                    <a href="javascript:void(0)"><i class="fa fa-search" aria-hidden="true"></i></a>
+                </div>
+                <div class="visitor-menu">
+                    <a class="btn-rare" href="./login.html"><i class="fa fa-sign-in" aria-hidden="true"></i>Log in</a>
+                    <a class="btn-focus" href="./signup.html"><i class="fa fa-user-plus" aria-hidden="true"></i>Sign up</a>
+                </div>
+            </div>
+            <div class="menu-box">
+                <a id="open-menu" onclick="showMobileMenu()"><i id="menu-icon" class="fa fa-bars fa-2x"></i></a>
+            </div>
+        </div>
+    </header>
+    <section id="mobile-menu">
+        <div class="menu">
+            <header class="top-menu-nav">
+                <div class="nav-wrapper">
+                    <nav class="nav-menu">
+                        <ul class="primary">
+                            <li>
+                                <a class="logo" href="index.html"><img src="assets/images/logo-white.png" alt="SinS"></a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="menu-box">
+                        <a id="btn-close"><i id="close-icon" class="fa fa-times" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </header>
+            <section id="mobile-links">
+                <div class="sign-up primary">
+                    <a id="btn-signup-mobile" onclick="showSignUpMenu()"><i class="fa fa-user-circle" aria-hidden="true"></i>Sign in</a>
+                </div>
+                <nav class="nav-menu-mobile">
+                    <div class="line-divider"></div>
+                    <ul class="primary">
+                        <li class="active">
+                            <a href="">Popular</a>
+                        </li>
+                        <li>
+                            <a href="">Recent</a>
+                        </li>
+                        <li>
+                            <a href="">Today's</a>
+                        </li>
+                    </ul>
+                    <div class="line-divider"></div>
+                    <ul class="secondary">
+                        <li>
+                            <a href="">Videos</a>
+                        </li>
+                        <li>
+                            <a href="">Quotes</a>
+                        </li>
+                        <li>
+                            <a href="">Gifs</a>
+                        </li>
+                        <li>
+                            <a href="">NSFW</a>
+                        </li>
+                        <li>
+                            <a href="">Art</a>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+            <section id="registration">
+                <div class="registration-wrapper">
+                    <div class="signup-info">
+                        <h2>Howdy partner!</h2>
+                        <p>SinS is the best source of daily scenes captured by you from your hometown, country or all over the world. Share anything you find interesting or strange, and see what other people think about it. Fulfill your day with laughter
+                            and discover what brings a smile on your face.</p>
+                    </div>
+                    <div class="hero">
+                        <div class="logo">
+                            <img src="assets/images/logo-white.png" alt="SinS - logo">
+                        </div>
+                        <h4>Sign in to SinS to share &amp; discuss funny thing you saw around Bulgaria and the world.</h4>
+                    </div>
+                    <div class="btn-container">
+                        <a id="btn-email" class="btn white fill" href="./signup.html"><i class="fa fa-envelope-o" aria-hidden="true"></i>Sign up with an E-mail</a>
+                        <div class="social-signup">
+                            <a id="btn-facebook" class="btn white" href="#" onClick="return false;"><i class="fa fa-facebook" aria-hidden="true"></i><span>Continue with </span>Facebook</a>
+                            <a id="btn-google-plus" class="btn white fill" href="#" onClick="return false;"><i class="fa fa-google-plus" aria-hidden="true"></i><span>Continue with </span>Google</a>
+                        </div>
+                        <a class="btn" href="./login.html">Login with Username or E-mail</a>
+                    </div>
+                    <div></div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <section id="single-post-container">
+        <div class="page">
+            <article id="p0" class="single-post">
+                <header>
+                    <h2><a>The Title of the Post is Here</a></h2>
+                </header>
+                <div class="post-statistics">
+                    <p>
+                        <a class="post-points"><span class="post-points-count">000</span> points</a>
+                        <span> · </span>
+                        <a class="post-comments"><span class="post-comments-count">0</span> comments</a>
+                    </p>
+                </div>
+                <div class="post-actions">
+                    <div class="vote">
+                        <ul class="btn-vote">
+                            <li><a><i class="fa fa-thumbs-up"></i><span id="like-text">LIKE</span></a></li>
+                            <li><a><i class="fa fa-thumbs-down"></i></a></li>
+                            <li><a><i class="fa fa-comments"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="more"><a><i class="fa fa-ellipsis-h"></i></a></div>
+                    <div class="share">
+                        <ul>
+                            <li><a class="btn-share facebook"><i class="fa fa-facebook"></i>Facebook</a></li>
+                            <li><a class="btn-share twitter"><i class="fa fa-twitter"></i>Twitter</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <div class="media-container">
+                        <a><img src="assets/images/niki-pishe.jpg" alt="Internet Explorer RULLZZzz"></a>
+                    </div>
+                </div>
+            </article>
+            <section class="post-comment">
+                <div>
+                    <div class="tab-bar clearfix">
+                        <div class="left">
+                            <h3><span>000</span> Comments</h3>
+                        </div>
+                    </div>
+                    <div class="comment-embed">
+                        <div class="comment-box first">
+                            <div class="avatar">
+                                <div class="image-container">
+                                    <a href="javascript:void(0);">
+                                        <img src="./assets/images/defaultAvatar.jpg">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="payload">
+                                <div>
+                                    <textarea class="post-text-area" placeholder="Write comments..."></textarea>
+                                </div>
+                                <div class="action">
+                                    <div class="buttons">
+                                        <p class="word-count">
+                                            <span class="badge-reply-remain">1000</span>
+                                        </p>
+                                        <a class="cmnt-btn" href="javascript:void(0);">Post</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <div class="comment-entry">
+                                    <div class="avatar">
+                                        <div class="image-container">
+                                            <a href="#" target="_blank">
+                                                <img src="./assets/images/userProfilePhoto1.jpeg">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="payload">
+                                        <div class="info">
+                                            <p>
+                                                <a class="username" href="https://9gag.com/u/seandria" target="_blank">Username1</a>
+                                                <span> · </span>
+                                                <span class="cmt-date">Date stays here</span>
+                                            </p>
+                                        </div>
+                                        <div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+                                        <div class="action">
+                                            <span>
+                                                <a class="reply" href="javascript:void(0);">Reply</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="subcomments-container">
+                                        <div class="comment-entry indent-1 first">
+                                            <div class="avatar">
+                                                <div class="image-container">
+                                                    <a href="#" target="_blank">
+                                                        <img src="./assets/images/userProfilePhoto2.png">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="payload">
+                                                <div class="info">
+                                                    <p>
+                                                        <a class="username" href="http://9gag.com/u/too_aesthetic" target="_blank">Username2</a>
+                                                        <span> · </span>
+                                                        <span class="cmt-date">Date stays here</span>
+                                                    </p>
+                                                </div>
+                                                <div class="content">
+                                                    <a href="http://9gag.com/aid/44131255" target="_blank">@Username1</a> Quod dolores, alias quos dolorum sint reiciendis totam animi perspiciatis eos magnam qui eveniet facilis impedit vero eligendi, quidem
+                                                    laudantium officia a.
+                                                </div>
+                                                <div class="action">
+                                                    <a class="reply" href="javascript:void(0);">Reply</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="comment-entry indent-1">
+                                            <div class="avatar">
+                                                <div class="image-container">
+                                                    <a href="#" target="_blank">
+                                                        <img src="./assets/images/userProfilePhoto1.jpeg">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="payload">
+                                                <div class="info">
+                                                    <p>
+                                                        <a class="username" href="http://9gag.com/u/too_aesthetic" target="_blank">Username1</a>
+                                                        <span> · </span>
+                                                        <span class="cmt-date">Date stays here</span>
+                                                    </p>
+                                                </div>
+                                                <div class="content">
+                                                    <a href="http://9gag.com/aid/44131255" target="_blank">@Username2</a> Atque pariatur qui alias, quidem quam nobis, sint suscipit deleniti vero totam rem inventore itaque cumque possimus, odio minima
+                                                    eos.
+                                                </div>
+                                                <div class="action">
+                                                    <a class="reply" href="javascript:void(0);">Reply</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="comment-entry indent-1">
+                                            <div class="avatar">
+                                                <div class="image-container">
+                                                    <a href="#" target="_blank">
+                                                        <img src="./assets/images/userProfilePhoto2.png">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="payload">
+                                                <div class="info">
+                                                    <p>
+                                                        <a class="username" href="http://9gag.com/u/too_aesthetic" target="_blank">Username2</a>
+                                                        <span> · </span>
+                                                        <span class="cmt-date">Date stays here</span>
+                                                    </p>
+                                                </div>
+                                                <div class="content">
+                                                    <a href="http://9gag.com/aid/44131255" target="_blank">@Username1</a> Velit facere, quasi enim distinctio dignissimos voluptatibus, voluptates. Voluptas nihil laboriosam rem modi, deserunt in nisi magni
+                                                    ipsa, cumque, voluptatem quibusdam! Ipsum.
+                                                </div>
+                                                <div class="action">
+                                                    <a class="reply" href="javascript:void(0);">Reply</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comment-entry indent-1 more">
+                                        <a class="collapsed-comment" href="javascript:void(0);">
+                                            <span>Load More Replies…</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="comment-entry">
+                                    <div class="avatar">
+                                        <div class="image-container">
+                                            <a href="#" target="_blank">
+                                                <img src="./assets/images/userProfilePhoto3.png">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="payload">
+                                        <div class="info">
+                                            <p>
+                                                <a class="username" href="https://9gag.com/u/seandria" target="_blank">Username3</a>
+                                                <span> · </span>
+                                                <span class="cmt-date">Date stays here</span>
+                                            </p>
+                                        </div>
+                                        <div class="content">Itaque non quas est numquam porro quaerat odit, sequi quasi velit ad consequuntur illo necessitatibus totam quidem voluptate eaque cupiditate. Voluptatibus, laboriosam.</div>
+                                        <div class="action">
+                                            <span>
+                                                <a class="reply" href="javascript:void(0);">Reply</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comment-pagination badge-load-more-container">
+                                <a class="cmnt-btn more grey badge-load-more-trigger" href="javascript:void(0)">
+                                    <span class="label">Load More Comments</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <script src="assets/js/controller.js"></script>
+</body>
+
+</html>
