@@ -154,13 +154,15 @@
         <div class="page">
             <article id="p0" class="single-post">
                 <header>
-                    <h2><a>The Title of the Post is Here</a></h2>
+                    <h2>
+                        <a id="post-title-text"></a>
+                    </h2>
                 </header>
                 <div class="post-statistics">
                     <p>
-                        <a class="post-points"><span class="post-points-count">000</span> points</a>
+                        <a class="post-points"><span id="post-points-text" class="post-points-count">000</span> points</a>
                         <span> · </span>
-                        <a class="post-comments"><span class="post-comments-count">0</span> comments</a>
+                        <a class="post-comments"><span id="post-comments-text" class="post-comments-count">0</span> comments</a>
                     </p>
                 </div>
                 <div class="post-actions">
@@ -181,7 +183,7 @@
                 </div>
                 <div class="post-content">
                     <div class="media-container">
-                        <a><img src="assets/images/niki-pishe.jpg" alt="Internet Explorer RULLZZzz"></a>
+                        <a><img id="post-image-source"></a>
                     </div>
                 </div>
             </article>
@@ -189,7 +191,7 @@
                 <div>
                     <div class="tab-bar clearfix">
                         <div class="left">
-                            <h3><span>000</span> Comments</h3>
+                            <h3><span id="comments-cout-text"></span> Comments</h3>
                         </div>
                     </div>
                     <div class="comment-embed">
@@ -228,7 +230,7 @@
                                     <div class="payload">
                                         <div class="info">
                                             <p>
-                                                <a class="username" href="https://9gag.com/u/seandria" target="_blank">Username1</a>
+                                                <a class="username" target="_blank">Username1</a>
                                                 <span> · </span>
                                                 <span class="cmt-date">Date stays here</span>
                                             </p>
@@ -252,14 +254,13 @@
                                             <div class="payload">
                                                 <div class="info">
                                                     <p>
-                                                        <a class="username" href="http://9gag.com/u/too_aesthetic" target="_blank">Username2</a>
+                                                        <a class="username" target="_blank">Username2</a>
                                                         <span> · </span>
                                                         <span class="cmt-date">Date stays here</span>
                                                     </p>
                                                 </div>
                                                 <div class="content">
-                                                    <a href="http://9gag.com/aid/44131255" target="_blank">@Username1</a> Quod dolores, alias quos dolorum sint reiciendis totam animi perspiciatis eos magnam qui eveniet facilis impedit vero eligendi, quidem
-                                                    laudantium officia a.
+                                                    <a target="_blank">@Username1</a> Quod dolores, alias quos dolorum sint reiciendis totam animi perspiciatis eos magnam qui eveniet facilis impedit vero eligendi, quidem laudantium officia a.
                                                 </div>
                                                 <div class="action">
                                                     <a class="reply" href="javascript:void(0);">Reply</a>
@@ -277,14 +278,13 @@
                                             <div class="payload">
                                                 <div class="info">
                                                     <p>
-                                                        <a class="username" href="http://9gag.com/u/too_aesthetic" target="_blank">Username1</a>
+                                                        <a class="username" target="_blank">Username1</a>
                                                         <span> · </span>
                                                         <span class="cmt-date">Date stays here</span>
                                                     </p>
                                                 </div>
                                                 <div class="content">
-                                                    <a href="http://9gag.com/aid/44131255" target="_blank">@Username2</a> Atque pariatur qui alias, quidem quam nobis, sint suscipit deleniti vero totam rem inventore itaque cumque possimus, odio minima
-                                                    eos.
+                                                    <a target="_blank">@Username2</a> Atque pariatur qui alias, quidem quam nobis, sint suscipit deleniti vero totam rem inventore itaque cumque possimus, odio minima eos.
                                                 </div>
                                                 <div class="action">
                                                     <a class="reply" href="javascript:void(0);">Reply</a>
@@ -302,14 +302,14 @@
                                             <div class="payload">
                                                 <div class="info">
                                                     <p>
-                                                        <a class="username" href="http://9gag.com/u/too_aesthetic" target="_blank">Username2</a>
+                                                        <a class="username" target="_blank">Username2</a>
                                                         <span> · </span>
                                                         <span class="cmt-date">Date stays here</span>
                                                     </p>
                                                 </div>
                                                 <div class="content">
-                                                    <a href="http://9gag.com/aid/44131255" target="_blank">@Username1</a> Velit facere, quasi enim distinctio dignissimos voluptatibus, voluptates. Voluptas nihil laboriosam rem modi, deserunt in nisi magni
-                                                    ipsa, cumque, voluptatem quibusdam! Ipsum.
+                                                    <a target="_blank">@Username1</a> Velit facere, quasi enim distinctio dignissimos voluptatibus, voluptates. Voluptas nihil laboriosam rem modi, deserunt in nisi magni ipsa, cumque, voluptatem quibusdam!
+                                                    Ipsum.
                                                 </div>
                                                 <div class="action">
                                                     <a class="reply" href="javascript:void(0);">Reply</a>
@@ -334,7 +334,7 @@
                                     <div class="payload">
                                         <div class="info">
                                             <p>
-                                                <a class="username" href="https://9gag.com/u/seandria" target="_blank">Username3</a>
+                                                <a class="username" target="_blank">Username3</a>
                                                 <span> · </span>
                                                 <span class="cmt-date">Date stays here</span>
                                             </p>
@@ -360,6 +360,7 @@
         </div>
     </section>
     <script src="assets/js/controller.js"></script>
+    <script src="assets/js/commentsController.js"></script>
 </body>
 
 </html>
