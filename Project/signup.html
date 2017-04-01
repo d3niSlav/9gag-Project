@@ -81,12 +81,7 @@
                 }
 
                 if(ok){
-                    var user = new User(username.value, email.value, pass.value);
-                    // userManager.registerUser(user);
-
-                    localStorage.setItem(username.value, JSON.stringify(user));
-
-                    // var _user = localStorage.getItem(username.value);
+                    registerUser(username.value, email.value, pass.value)
 
                     alert("Success sign up")
                 }
@@ -95,6 +90,7 @@
             }
 
             function validateEmail(email) {
+                //regular expression ( Nz kakvo stava tuk )
                 var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 return re.test(email);
             }
@@ -115,7 +111,7 @@
             }
         </script>
 
-        <script type="text/javascript" src="assets\js\authService.js"></script>
+        <script type="text/javascript" src="assets\js\userManager.js"></script>
 
 </body>
 

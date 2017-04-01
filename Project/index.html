@@ -7,6 +7,7 @@
     <link rel="icon" href="assets/images/logo-icon.png">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/top-menu.css">
+    <link rel="stylesheet" href="assets/css/dialog_upload_style.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <script src="assets/js/switchViews.js"></script>
     <script src="assets/js/model.js"></script>
@@ -22,15 +23,18 @@
                         <a class="logo" href="index.html"><img src="assets/images/logo-white.png" alt="SinS"></a>
                     </li>
                     <li class="active">
-                        <a href="">Popular</a>
+                         <!--in postController-->
+                      <a  onclick="loadPopular()"id="button-popular">Popular</a> 
                     </li>
                     <li>
-                        <a href="">Recent</a>
+                         <!--in postController-->
+                        <a  onclick="loadRecent()"id="button-recent">Recent</a>
                     </li>
                     <li>
                         <a href="">Today's</a>
                     </li>
                     <li>
+                        <!--showDropdownMenu se namira v  switchViews-->
                         <a onclick="showDropdownMenu()" class="drop-btn">More<i class="fa fa-chevron-down drop-btn" aria-hidden="true"></i></a>
                         <div id="dropdownMenu" class="dropdown-content">
                             <a id="ddrop-menu-color" href="#">SinS GIF</a>
@@ -38,6 +42,22 @@
                             <a id="ddrop-menu-color" href="#">Funny</a>
                         </div>
                     </li>
+                    <li>
+                    <button id="myBtn">UpLoad</button>
+                    </li>
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
+                            <div id="modal-content">
+                                <span class="close">&times;</span>
+                                <!--<form name="input" onsubmit="safeFile()" >-->
+                                    <input type="text" id="pictureName" placeholder="Enter Picture Name" />
+                                    <input type="text" id="urlPicture" placeholder="Enter URL" />
+                                    <button onclick="safeFile()" id="submit-picture" value="Done">Done</button>
+                                <!--</form>-->
+                            </div>
+                        </div>
                 </ul>
                 <ul class="secondary">
                     <li>
@@ -58,12 +78,17 @@
                 </ul>
             </nav>
             <div class="side-menu">
+                <input id="input-search"></input>
                 <div class="search">
-                    <a href="javascript:void(0)"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    <a onclick="searchPost()"><i class="fa fa-search" aria-hidden="true"></i></a>
                 </div>
-                <div class="visitor-menu">
+                <div class="visitor-menu" id="auth_block">
                     <a class="btn-rare" href="./login.html"><i class="fa fa-sign-in" aria-hidden="true"></i>Log in</a>
                     <a class="btn-focus" href="./signup.html"><i class="fa fa-user-plus" aria-hidden="true"></i>Sign up</a>
+                </div>
+                <div class="visitor-menu" id="signed_block">
+                    <label id="userName" style="color: #ffffff"> </label>
+                    <button class="btn-focus" id="logoutBtn"><i class="fa fa-user-plus" aria-hidden="true" ></i>Log out</button>
                 </div>
             </div>
             <div class="menu-box">
@@ -154,7 +179,7 @@
         <div class="page">
             <div class="main-posts">
                 <section id="posts-list">
-                    <div class="posts"></div>
+                    <div class="posts" id="div-posts"></div>
                 </section>
             </div>
             <section id="sidebar">
@@ -167,6 +192,46 @@
     </section>
     <script src="assets/js/controller.js"></script>
     <script src="assets/js/postsController.js"></script>
+    <script src="assets/js/userManager.js"></script>
+    <script src="assets/js/uploadDialog.js"></script>
+    <!--<script src="assets/js/postsManager.js"></script>-->
+
+    <script>
+        window.onload = function() {
+            var authBlock = document.getElementById("auth_block");
+            var signedBlock = document.getElementById("signed_block");
+            var uploadDialogContainer = document.getElementById("myBtn");
+            var labelLogedUser = document.getElementById("userName");
+            //if click logout button do function do Logout
+            document.getElementById("logoutBtn").addEventListener("click", function logout(){
+                //function do logout  localStorage.setItem(loggedUserKey, null);
+                //in userManger doLogout
+                doLogout();
+                authBlock.style.display = "block";
+                signedBlock.style.display = "none";
+            }, false);
+
+            var logedUser = getLogedUser();
+            // getlocalUser return JSON.parse(localStorage.getItem(loggedUserKey)); in userManger
+            //if have logged user return true 
+            if(logedUser){
+                //show them
+                authBlock.style.display = "none";
+                signedBlock.style.display = "block";
+                uploadDialogContainer.style.display = "block";
+                
+
+                labelLogedUser.innerText = logedUser.username;
+            } else {
+                //hide them
+                authBlock.style.display = "block";
+                signedBlock.style.display = "none";
+                uploadDialogContainer.style.display = "none";
+            }            
+        };
+        //by default load Populat fucntion
+        loadPopular();
+    </script>
 
 </body>
 

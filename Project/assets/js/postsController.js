@@ -1,3 +1,4 @@
+//deni
 function createNewPost(post) {
     var newPost = document.createElement("article");
     newPost.id = post.postId;
@@ -156,7 +157,7 @@ function createNewPost(post) {
 
     document.getElementById("posts-list").firstElementChild.appendChild(newPost);
 }
-
+//deni
 function createHighlinedPost(post) {
     var newFeaturedPost = document.createElement("li");
     newFeaturedPost.className = "featured-item";
@@ -185,30 +186,124 @@ function createHighlinedPost(post) {
 
     document.getElementById("featured-item-container").appendChild(newFeaturedPost);
 }
-
+//deni
 var preloadedPostsJSON = [
-    { "postId": "p0", "userId": 1, "title": "Internet Explorer RULLZZzz", "source": "assets/images/html.jpg", "points": 367, "comments": [], "publishDate": "2017-02-125T09:05:36.974Z" },
-    { "postId": "p1", "userId": 1, "title": "KEEP CALM because you are the best mentor ever", "source": "assets/images/niki-pishe.jpg", "points": 728, "comments": [], "publishDate": "2017-01-01T09:05:36.981Z" },
-    { "postId": "p2", "userId": 1, "title": "That's the real question", "source": "assets/images/variable.jpg", "points": 915, "comments": [], "publishDate": "2017-03-05T09:05:36.983Z" },
-    { "postId": "p3", "userId": 2, "title": "We all feel the same", "source": "assets/images/doge-has-no-idea.jpg", "points": 866, "comments": [], "publishDate": "2017-02-25T09:05:36.986Z" },
-    { "postId": "p4", "userId": 3, "title": "When you think you are in the right company but suddenly you find yourself in a totally different continent", "source": "assets/images/this-is-js.jpg", "points": 333, "comments": [], "publishDate": "2017-01-06T09:05:36.987Z" },
-    { "postId": "p5", "userId": 4, "title": "We all make mistakes", "source": "assets/images/radeva.jpg", "points": 719, "comments": [], "publishDate": "2017-03-24T09:05:36.990Z" },
-    { "postId": "p6", "userId": 2, "title": "Best book ever", "source": "assets/images/book.jpg", "points": 123, "comments": [], "publishDate": "2017-03-24T09:04:36.992Z" },
-    { "postId": "p7", "userId": 2, "title": "Confused? I don't think so", "source": "assets/images/confussion.jpg", "points": 484, "comments": [], "publishDate": "2017-01-19T09:05:36.994Z" }
+    { "postId": "p0", "userId": 1, "title": "Internet Explorer RULLZZzz", "source": "assets/images/html.jpg", "points": 367, "comments": [], "publishDate": 1490567523 },
+    { "postId": "p1", "userId": 1, "title": "KEEP CALM because you are the best mentor ever", "source": "assets/images/niki-pishe.jpg", "points": 728, "comments": [], "publishDate": 1490481123 },
+    { "postId": "p2", "userId": 1, "title": "That's the real question", "source": "assets/images/variable.jpg", "points": 915, "comments": [], "publishDate": 1490394723 },
+    { "postId": "p3", "userId": 2, "title": "We all feel the same", "source": "assets/images/doge-has-no-idea.jpg", "points": 866, "comments": [], "publishDate": 1490308323 },
+    { "postId": "p4", "userId": 3, "title": "When you think you are in the right company but suddenly you find yourself in a totally different continent", "source": "assets/images/this-is-js.jpg", "points": 333, "comments": [], "publishDate": 1490221923 },
+    { "postId": "p5", "userId": 4, "title": "We all make mistakes", "source": "assets/images/radeva.jpg", "points": 719, "comments": [], "publishDate": 1490135523 },
+    { "postId": "p6", "userId": 2, "title": "Best book ever", "source": "assets/images/book.jpg", "points": 123, "comments": [], "publishDate": 1490049123 },
+    { "postId": "p7", "userId": 2, "title": "Confused? I don't think so", "source": "assets/images/confussion.jpg", "points": 484, "comments": [], "publishDate": 1489962723 }
 ];
 
-window.localStorage.setItem("posts", JSON.stringify(preloadedPostsJSON));
 
-var posts = [];
-var postsFromLocalStorage = JSON.parse(window.localStorage.getItem("posts")) || [];
+//get posts from local storage by key "post" and parse it to js objects
+//local store localStorage.setItem('yourKeyName', 'your value');
+// window.localStorage.setItem("post", JSON.stringify(preloadedPostsJSON));
+function getAllPosts(){
+    var postsJSONArr = localStorage.getItem("post");
+    return JSON.parse(postsJSONArr);
+}
+//compare them by points (tochki)
+function getPopularPosts(){
+    var allPosts = getAllPosts();
+//sort function sort itams of array but also camapre/sort numbers
+    allPosts.sort(function(a,b){
+        if(a.points < b.points)
+            return 1;
 
-for (var index = 0; index < postsFromLocalStorage.length; index++) {
-    post = postsFromLocalStorage[index];
-    posts.push(new Post(post.postId, post.userId, post.title, post.source, post.points, post.comments, post.publishDate));
-    createNewPost(posts[index]);
-    createHighlinedPost(posts[index]);
+        if(a.points > b.points)
+            return -1;
+
+        return 0;
+    });
+
+    return allPosts;
+}
+//get images by time ..can get them by seconds and miliseconds
+function getRecentPosts(){
+    var allPosts = getAllPosts();
+//sort also by numbers
+    allPosts.sort(function(a,b){
+        if(a.publishDate > b.publishDate)
+            return 1;
+
+        if(a.publishDate < b.publishDate)
+            return -1;
+
+        return 0;
+    });
+
+    return allPosts;
+}
+//how to use local store localStorage.setItem('yourKeyName', 'your value');
+    window.localStorage.setItem("post", JSON.stringify(preloadedPostsJSON));
+    // document.getElementById("button-recent").addEventListener("click", loadPopularC(), false);
+function searchPost(){
+    var searchKey = document.getElementById("input-search").value;
+    var resultPosts = searchPostsByTitle(searchKey)
+
+    drawPosts(resultPosts);
+}
+//saerch images by there title and show them
+function searchPostsByTitle(title){
+    var allPosts = getAllPosts();
+    //make empty array 
+    var resultPosts = [];
+    //
+    for(var i = 0; i < allPosts.length; i++){
+        //make them with loweCase becouse if i have Tank nad tank will not match the titles with function search
+        if(allPosts[i].title.toLowerCase().search(title.toLowerCase()) >= 0){
+            //add with push in the empty array push add on tail 
+            resultPosts.push(allPosts[i]);
+        }
+    }
+
+    return resultPosts;
 }
 
+function loadRecent(){
+    //from function getRecentsPost with camapre them by time 
+    var recent = getRecentPosts();
+    //from function  drawPosts witch draw new posts in middle and right in the browser
+    drawPosts(recent);
+}
+function loadPopular(){    
+    var popularSortedPosts = getPopularPosts();
+    //     var divPostsMainList = document.getElementById("posts");
+    // var ulPostNav = document.getElementById("featured-item-container");
+    // divPostsMainList.innerHTML = "";
+    // ulPostNav.innerHTML = "";
+
+    drawPosts(popularSortedPosts);
+}
+
+function drawPosts(arr){
+    posts = [];
+
+    var divPostsMainList = document.getElementById("div-posts"); 
+    var ulPostNav = document.getElementById("featured-item-container");
+    //empty the div with images middle and right
+    divPostsMainList.innerHTML = "";
+    ulPostNav.innerHTML = "";
+    //iterage array with post and draw it in the miidle and in the right wit createNewpost and createHiglinedPOst
+    //get them from Deni code in postsController 2 roll and 161 roll
+    for (var index = 0; index < arr.length; index++) {
+        post = arr[index];
+        //constructor Post  in model push add new itam in array at the end ! from Deni Constructor
+        posts.push(new Post(post.postId, post.userId, post.title, post.source, post.points, post.comments, post.publishDate));
+        //middle
+        createNewPost(posts[index]);
+        //right
+        createHighlinedPost(posts[index]);
+    }
+}
+
+var posts = [];
+
+//deni
 function likePostAction(buttonElement, action) {
     var currentPost = getPostFromButtonPress(buttonElement);
     if (action == "like") {
@@ -226,7 +321,7 @@ function likePostAction(buttonElement, action) {
     }
     updatePointsCount(buttonElement, currentPost.points);
 }
-
+//deni
 function getPostFromButtonPress(buttonElement) {
     var postId = getPostIdFromButtonElement(buttonElement);
 
@@ -236,17 +331,17 @@ function getPostFromButtonPress(buttonElement) {
 
     return post;
 }
-
+//deni
 function getPostIdFromButtonElement(buttonElement) {
     return buttonElement.parentNode.parentNode.parentNode.parentNode.parentNode.id;
 }
-
+//deni
 function updatePointsCount(buttonElement, newPoints) {
     var postId = getPostIdFromButtonElement(buttonElement);
     var pointsCount = document.querySelector("article#" + postId + " .post-statistics .post-points-count");
     pointsCount.innerHTML = newPoints;
 }
-
+//deni
 function updateButton(buttonElement) {
     if (buttonElement.tagName == "I") {
         buttonElement = buttonElement.parentNode;

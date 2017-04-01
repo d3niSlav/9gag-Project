@@ -25,33 +25,20 @@
     </div>
 
     <script>
+       // Execute this JavaScript function (initUser)immediately after a page has been loaded:
+        window.onload = function() {
+            //get users in json in local storage wiht initUsers
+            initUser();
+        };
+
         function login(){
                 var username = document.getElementById("username");
                 var pass = document.getElementById("password");
-
-                // var loggedResult = userManager.loginUser(username.value, pass.value);
-                
-                var userJSON = localStorage.getItem(username.value);
-
-                var ok = false;
-                if(userJSON){
-                    var user = JSON.parse(userJSON);
-                    if(user.password === pass.value){
-                        alert("Login Success");
-                        ok = true; 
-                    } else {
-                        alert("Incorrect password");
-                        ok = false; 
-                    }
-                } else {
-                   alert("User not found")
-                   ok = false; 
-                }
-
-                return ok;
+                //with this usernames in login i use function doLogin to check if they match
+                return doLogin(username.value, pass.value);
         }
         
     </script>
-    <script type="text/javascript" src="assets\js\authService.js"></script>
+    <script type="text/javascript" src="assets\js\userManager.js"></script>
 </body>
 </html>

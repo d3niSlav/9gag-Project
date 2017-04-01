@@ -20,6 +20,7 @@ function showSignUpMenu() {
 }
 
 // Dropdown menu switch
+//Toggle between two classes for a <div> element:
 function showDropdownMenu() {
     document.getElementById("dropdownMenu").classList.toggle("show");
 }
